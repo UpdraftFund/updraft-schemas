@@ -3,5 +3,5 @@
   "type": "object",
   "name": "string",
   "description": "string",
-  "required": [ "name", "description" ]
+  "required": [ "name" ]
 }
