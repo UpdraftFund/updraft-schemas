@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "team": { "type": "string" },
+    "website": { "type": "string" },
+    "social1": { "type": "string" },
+    "social2": { "type": "string" },
+    "social3": { "type": "string" },
+    "image": {
+      "description": "data URL of embedded image",
+      "type": "string"
+    },
+    "about": {
+      "type": "string"
+    }
+  },
+  "anyOf": [
+    { "required": [ "name" ] },
+    { "required": [ "team" ] }
+  ]
+}
