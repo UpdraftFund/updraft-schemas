@@ -1,3 +1,4 @@
 {
-  "name": "Audit the Updraft smart contracts"
+  "name": "Audit the Updraft smart contracts",
+  "tags": [ "Updraft", "security", "smart contracts", "audit", "Solidity" ]
 }
