@@ -7,5 +7,5 @@
     "news": { "type": "string" },
     "repository": { "type": "string" }
   },
-  "required": [ "name", "description" ]
+  "required": [ "name" ]
 }
