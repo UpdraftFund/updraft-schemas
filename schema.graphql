@@ -20,6 +20,11 @@ type Idea @entity {
   tags: [String!] @index
 }
 
+type TagCount @entity {
+  id: String!
+  count: Int!
+}
+
 type _Schema_ @fulltext(
   name: "ideaSearch"
   language: en
