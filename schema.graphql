@@ -22,7 +22,7 @@ type Idea @entity {
 
 type TagCount @entity {
   id: String!
-  count: Int!
+  count: Int! @index
 }
 
 type _Schema_ @fulltext(
