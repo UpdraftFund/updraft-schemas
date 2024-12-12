@@ -2,11 +2,18 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-      "name": { "type": "string" },
-      "description": { "type": "string" },
+    "name": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 4000
+    },
     "tags": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": { "type": "string" },
+      "maxItems": 5
     }
   },
   "required": [ "name" ]
