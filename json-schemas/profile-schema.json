@@ -6,21 +6,7 @@
     "team": { "type": "string" },
     "links": {
       "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "kind": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "format": "uri"
-          }
-        },
-        "required": [
-          "url"
-        ]
-      }
+      "items": { "type": "string" }
     },
     "image": {
       "description": "data URL of embedded image",
