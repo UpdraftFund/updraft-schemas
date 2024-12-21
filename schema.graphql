@@ -38,6 +38,7 @@ type IdeaContribution @entity {
   funder: User! @index
   positionIndex: BigInt! # uint256
   contribution: BigInt! # uint256
+  createdTime: BigInt! @index # uint256
 }
 
 type Solution @entity {
@@ -47,6 +48,7 @@ type Solution @entity {
   fundingToken: Bytes! @index # address
   startTime: BigInt! @index # uint256
   deadline: BigInt! @index # uint256
+  modifiedTime: BigInt! @index # uint256
   shares: BigInt! @index # uint256
   tokensContributed: BigInt! # uint256
   fundingGoal: BigInt! #uint256
@@ -61,4 +63,5 @@ type SolutionContribution @entity {
   positionIndex: BigInt! # uint256
   contribution: BigInt! # uint256
   refunded: Boolean!
+  createdTime: BigInt! @index # uint256
 }
