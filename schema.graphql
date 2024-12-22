@@ -18,7 +18,6 @@ type Idea @entity {
   name: String
   description: String
   tags: [String!] @index
-  solutions: [Solution!] @derivedFrom(field: "idea")
 }
 
 type TagCount @entity {
