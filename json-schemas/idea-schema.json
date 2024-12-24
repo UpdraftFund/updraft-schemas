@@ -8,7 +8,7 @@
     },
     "description": {
       "type": "string",
-      "maxLength": 4000
+      "maxLength": 2500
     },
     "tags": {
       "type": "array",
