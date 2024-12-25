@@ -18,6 +18,7 @@ type Idea @entity {
   name: String
   description: String
   tags: [String!] @index
+  funderReward: BigInt! #uint256
 }
 
 type TagCount @entity {
@@ -54,6 +55,7 @@ type Solution @entity {
   fundingGoal: BigInt! #uint256
   stake: BigInt! @index # uint256
   info: Bytes! # JSON blob 'data'
+  funderReward: BigInt! #uint256
 }
 
 type SolutionContribution @entity {
