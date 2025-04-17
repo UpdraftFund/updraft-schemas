@@ -1,9 +1,9 @@
-type User @entity {
+type User @entity(immutable: true) {
   id: Bytes! # address
   profile: Bytes
 }
 
-type Idea @entity {
+type Idea @entity(immutable: true) {
   id: Bytes! # address
   creator: User! @index
   startTime: BigInt! @index # uint256
@@ -14,7 +14,7 @@ type Idea @entity {
   funderReward: BigInt! #uint256
 }
 
-type TagCount @entity {
+type TagCount @entity(immutable: true) {
   id: String!
   count: Int! @index
 }
@@ -26,7 +26,7 @@ type _Schema_ @fulltext(
   include: [{ entity: "Idea", fields: [{ name: "name" }, { name: "description" }] }]
 )
 
-type IdeaContribution @entity {
+type IdeaContribution @entity(immutable: true) {
   id: Bytes! # hash of idea, funder, and positionIndex
   idea: Idea!
   funder: User! @index
@@ -35,7 +35,7 @@ type IdeaContribution @entity {
   createdTime: BigInt! @index # uint256
 }
 
-type Solution @entity {
+type Solution @entity(immutable: true) {
   id: Bytes! # address
   idea: Idea! @index
   drafter: User! @index
@@ -52,7 +52,7 @@ type Solution @entity {
   funderReward: BigInt! #uint256
 }
 
-type SolutionContribution @entity {
+type SolutionContribution @entity(immutable: true) {
   id: Bytes! # hash of solution, funder, and positionIndex
   solution: Solution!
   funder: User! @index
