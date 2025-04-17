@@ -1,9 +1,9 @@
-type User @entity(immutable: true) {
+type User @entity(immutable: false) {
   id: Bytes! # address
   profile: Bytes
 }
 
-type Idea @entity(immutable: true) {
+type Idea @entity(immutable: false) {
   id: Bytes! # address
   creator: User! @index
   startTime: BigInt! @index # uint256
@@ -14,7 +14,7 @@ type Idea @entity(immutable: true) {
   funderReward: BigInt! #uint256
 }
 
-type TagCount @entity(immutable: true) {
+type TagCount @entity(immutable: false) {
   id: String!
   count: Int! @index
 }
@@ -35,7 +35,7 @@ type IdeaContribution @entity(immutable: true) {
   createdTime: BigInt! @index # uint256
 }
 
-type Solution @entity(immutable: true) {
+type Solution @entity(immutable: false) {
   id: Bytes! # address
   idea: Idea! @index
   drafter: User! @index
@@ -52,7 +52,7 @@ type Solution @entity(immutable: true) {
   funderReward: BigInt! #uint256
 }
 
-type SolutionContribution @entity(immutable: true) {
+type SolutionContribution @entity(immutable: false) {
   id: Bytes! # hash of solution, funder, and positionIndex
   solution: Solution!
   funder: User! @index
