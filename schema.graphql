@@ -46,7 +46,7 @@ type Solution @entity {
   shares: BigInt! @index # uint256
   tokensContributed: BigInt! # uint256
   fundingGoal: BigInt! #uint256
-  progress: BigInt #uint256
+  progress: BigInt! #uint256
   stake: BigInt! @index # uint256
   info: Bytes! # JSON blob 'data'
   funderReward: BigInt! #uint256
