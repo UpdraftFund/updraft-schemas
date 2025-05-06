@@ -26,7 +26,7 @@ type _Schema_ @fulltext(
   include: [{ entity: "Idea", fields: [{ name: "name" }, { name: "description" }] }]
 )
 
-type IdeaContribution @entity(immutable: true) {
+type IdeaContribution @entity(immutable: false) {
   id: Bytes! # hash of idea, funder, and positionIndex
   idea: Idea!
   funder: User! @index
