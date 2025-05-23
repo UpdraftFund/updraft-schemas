@@ -31,7 +31,7 @@ type IdeaContribution @entity(immutable: false) {
   idea: Idea!
   funder: User! @index
   positionIndex: BigInt! # uint256
-  contribution: BigInt! # uint256
+  contribution: BigInt! @index # uint256
   createdTime: BigInt! @index # uint256
 }
 
@@ -57,7 +57,7 @@ type SolutionContribution @entity(immutable: false) {
   solution: Solution!
   funder: User! @index
   positionIndex: BigInt! # uint256
-  contribution: BigInt! # uint256
+  contribution: BigInt! @index # uint256
   refunded: Boolean!
   createdTime: BigInt! @index # uint256
 }
