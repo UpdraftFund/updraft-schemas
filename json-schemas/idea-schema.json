@@ -4,11 +4,11 @@
   "properties": {
     "name": {
       "type": "string",
-      "maxLength": 100
+      "maxLength": 200
     },
     "description": {
       "type": "string",
-      "maxLength": 2500
+      "maxLength": 8000
     },
     "tags": {
       "type": "array",
