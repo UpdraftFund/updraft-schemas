@@ -33,6 +33,7 @@ type IdeaContribution @entity(immutable: false) {
   positionIndex: BigInt! # uint256
   contribution: BigInt! @index # uint256
   createdTime: BigInt! @index # uint256
+  isAirdrop: Boolean!
 }
 
 type Solution @entity(immutable: false) {
