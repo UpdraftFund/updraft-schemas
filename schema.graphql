@@ -28,7 +28,7 @@ type _Schema_ @fulltext(
 
 type IdeaContribution @entity(immutable: false) {
   id: Bytes! # hash of idea, funder, and positionIndex
-  idea: Idea!
+  idea: Idea! @index
   funder: User! @index
   positionIndex: BigInt! # uint256
   contribution: BigInt! @index # uint256
@@ -55,10 +55,21 @@ type Solution @entity(immutable: false) {
 
 type SolutionContribution @entity(immutable: false) {
   id: Bytes! # hash of solution, funder, and positionIndex
-  solution: Solution!
+  solution: Solution! @index
   funder: User! @index
   positionIndex: BigInt! # uint256
   contribution: BigInt! @index # uint256
   refunded: Boolean!
   createdTime: BigInt! @index # uint256
+}
+
+type DependencyContribution @entity(immutable: true) {
+    id: ID! # hash of TransactionHash, LogIndex, and DependencyIndex
+    funder: User! @index
+    primarySolution: Solution! @index
+    primaryAmount: BigInt! # uint256
+    dependencySolution: Solution! @index
+    dependencyAmount: BigInt! # uint256
+    ratioToPrimary: BigDecimal!
+    createdTime: BigInt! @index # uint256
 }
