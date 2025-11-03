@@ -64,7 +64,7 @@ type SolutionContribution @entity(immutable: false) {
 }
 
 type DependencyContribution @entity(immutable: true) {
-    id: ID! # hash of TransactionHash, LogIndex, and DependencyIndex
+    id: Bytes! # hash of TransactionHash, LogIndex, and DependencyIndex
     funder: User! @index
     primarySolution: Solution! @index
     primaryAmount: BigInt! # uint256
