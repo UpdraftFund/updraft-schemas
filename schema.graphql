@@ -61,15 +61,14 @@ type SolutionContribution @entity(immutable: false) {
   contribution: BigInt! @index # uint256
   refunded: Boolean!
   createdTime: BigInt! @index # uint256
+  dependencyContributions: [DependencyContribution!] @derivedFrom(field: "primaryContribution")
 }
 
 type DependencyContribution @entity(immutable: true) {
-    id: Bytes! # hash of TransactionHash, LogIndex, and DependencyIndex
-    funder: User! @index
-    primarySolution: Solution! @index
-    primaryAmount: BigInt! # uint256
-    dependencySolution: Solution! @index
-    dependencyAmount: BigInt! # uint256
-    ratioToPrimary: BigDecimal!
-    createdTime: BigInt! @index # uint256
+  id: Bytes! # hash of primaryContribution, dependencyChainId, and dependencyAddress
+  primaryContribution: SolutionContribution! @index
+  dependencyChainId: BigInt! @index # The chain ID of the dependent Solution
+  dependencyAddress: Bytes! @index # The address of the dependent Solution
+  dependencyAmount: BigInt! # uint256
+  ratioToPrimary: BigDecimal! @index
 }
